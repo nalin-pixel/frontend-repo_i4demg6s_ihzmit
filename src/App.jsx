@@ -1,28 +1,38 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import RolePlay from './components/RolePlay';
+import WhyAdmired from './components/WhyAdmired';
+import FunFacts from './components/FunFacts';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-slate-800">
+      <header className="sticky top-0 z-20 backdrop-blur bg-white/70 border-b border-cyan-100">
+        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+          <div className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-cyan-700 to-blue-800 bg-clip-text text-transparent">Furina • Fontaine</div>
+          <nav className="hidden sm:flex items-center gap-6 text-sm">
+            <a href="#roleplay" className="hover:text-cyan-700">Role Play</a>
+            <a href="#lessons" className="hover:text-cyan-700">Teladan</a>
+            <a href="#facts" className="hover:text-cyan-700">Fakta</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <RolePlay />
+        <WhyAdmired />
+        <section id="facts">
+          <FunFacts />
+        </section>
+      </main>
+
+      <footer className="border-t border-cyan-100">
+        <div className="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-600">
+          Dibuat sebagai penghormatan untuk karakter Furina dari Genshin Impact. Website ini bersifat penggemar.
+        </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
